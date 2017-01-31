@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<canvas id = "canvas" width="1000" height="1000"></canvas>
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script>
+		window.addEventListener('load' , init);
+		function init(){
+
+	  var stage = new createjs.Stage("canvas");
+      var star = new createjs.Shape();
+      star.graphics.beginFill('red');
+      star.graphics.drawPolyStar(100, 100, 75, 100, 0.5, -90);
+      stage.addChild(star);
+      var muki = 1;
+      createjs.Ticker.on('tick' , function(){
+
+      star.x += 10 * muki;
+      if(shape.x > 500 ) muki = -1;
+      if(shape.x < 0) muki= +1;
+      stage.update();
+      })
+  }
+    
+	</script>
+</body>
+</html>

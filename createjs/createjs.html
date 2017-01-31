@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>createjsの練習</h1>
+	<canvas id = "canvas" width="500" height="500"></canvas>
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script>
+
+		window.addEventListener('load' , init);
+		function init(){
+		var stage = new createjs.Stage('canvas');
+
+		var shikaku = new createjs.Shape();
+			shikaku.graphics.beginFill('red');
+			shikaku.graphics.drawRect(100,100,100,100);
+			stage.addChild(shikaku);
+
+		var maru = new createjs.Shape();
+			maru.graphics.beginFill('green');
+			maru.graphics.drawCircle(300,150,50);
+			stage.addChild(maru);
+
+		var abc = new createjs.Shape();
+			abc.graphics.beginStroke('blue');
+			abc.graphics.setStrokeStyle(5);
+			abc.graphics.drawCircle(200,200,100);
+			stage.addChild(abc);
+
+		var poly = new createjs.Shape();
+			poly.graphics.beginFill("DarkRed2");
+			poly.graphics.drawPolyStar(500, 500, 75, 5, 0.6, -50);
+			stage.addChild(poly);
+
+
+		stage.update();
+		}
+
+	</script>
+</body>
+</html>
